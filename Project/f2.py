@@ -1,0 +1,115 @@
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'f2.ui'
+##
+## Created by: Qt User Interface Compiler version 6.10.0
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QDateEdit, QLabel, QLineEdit,
+    QPushButton, QSizePolicy, QWidget)
+
+class Ui_Form2(object):
+    def setupUi(self, Form):
+        if not Form.objectName():
+            Form.setObjectName(u"Form")
+        Form.resize(382, 709)
+        self.label = QLabel(Form)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(40, 20, 151, 16))
+        font = QFont()
+        font.setPointSize(14)
+        self.label.setFont(font)
+        self.lineEdit = QLineEdit(Form)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setGeometry(QRect(40, 50, 300, 40))
+        self.lineEdit.setFont(font)
+        self.lineEdit_2 = QLineEdit(Form)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setGeometry(QRect(40, 120, 300, 40))
+        self.lineEdit_2.setFont(font)
+        self.label_2 = QLabel(Form)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(40, 100, 151, 16))
+        self.label_2.setFont(font)
+        self.lineEdit_3 = QLineEdit(Form)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lineEdit_3.setGeometry(QRect(40, 200, 300, 40))
+        self.lineEdit_3.setFont(font)
+        self.label_3 = QLabel(Form)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(40, 170, 151, 21))
+        self.label_3.setFont(font)
+        self.dateEdit = QDateEdit(Form)
+        self.dateEdit.setObjectName(u"dateEdit")
+        self.dateEdit.setGeometry(QRect(40, 290, 300, 40))
+        self.dateEdit.setFont(font)
+        self.label_4 = QLabel(Form)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(40, 250, 191, 31))
+        self.label_4.setFont(font)
+        self.label_5 = QLabel(Form)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setGeometry(QRect(40, 440, 151, 31))
+        self.label_5.setFont(font)
+        self.lineEdit_4 = QLineEdit(Form)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.lineEdit_4.setGeometry(QRect(40, 480, 300, 40))
+        self.lineEdit_4.setFont(font)
+        self.lineEdit_5 = QLineEdit(Form)
+        self.lineEdit_5.setObjectName(u"lineEdit_5")
+        self.lineEdit_5.setGeometry(QRect(40, 570, 300, 40))
+        self.lineEdit_5.setFont(font)
+        self.lineEdit_4.setEchoMode(QLineEdit.Password)
+        self.lineEdit_5.setEchoMode(QLineEdit.Password)
+        self.label_6 = QLabel(Form)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setGeometry(QRect(40, 530, 271, 31))
+        self.label_6.setFont(font)
+        self.pushButton = QPushButton(Form)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(40, 630, 150, 50))
+        self.pushButton.setFont(font)
+        self.pushButton_2 = QPushButton(Form)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setGeometry(QRect(200, 630, 141, 50))
+        self.pushButton_2.setFont(font)
+        self.lineEdit_6 = QLineEdit(Form)
+        self.lineEdit_6.setObjectName(u"lineEdit_6")
+        self.lineEdit_6.setGeometry(QRect(40, 380, 300, 40))
+        self.lineEdit_6.setFont(font)
+        self.lineEdit_6.setInputMask("+7(999)999-99-99")
+        self.label_7 = QLabel(Form)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setGeometry(QRect(40, 340, 151, 31))
+        self.label_7.setFont(font)
+
+        self.retranslateUi(Form)
+
+        QMetaObject.connectSlotsByName(Form)
+    # setupUi
+
+    def retranslateUi(self, Form):
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        self.label.setText(QCoreApplication.translate("Form", u"\u0424\u0430\u043c\u0438\u043b\u0438\u044f", None))
+        self.label_2.setText(QCoreApplication.translate("Form", u"\u0418\u043c\u044f", None))
+        self.label_3.setText(QCoreApplication.translate("Form", u"\u041e\u0442\u0447\u0435\u0441\u0442\u0432\u043e", None))
+        self.label_4.setText(QCoreApplication.translate("Form", u"\u0414\u0430\u0442\u0430 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None))
+        self.label_5.setText(QCoreApplication.translate("Form", u"\u041f\u0430\u0440\u043e\u043b\u044c", None))
+        self.lineEdit_5.setText("")
+        self.label_6.setText(QCoreApplication.translate("Form", u"\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435 \u043f\u0430\u0440\u043e\u043b\u044f", None))
+        self.pushButton.setText(QCoreApplication.translate("Form", u"\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Form", u"\u041e\u0442\u043c\u0435\u043d\u0430", None))
+        self.lineEdit_6.setText("")
+        self.label_7.setText(QCoreApplication.translate("Form", u"\u0422\u0435\u043b\u0435\u0444\u043e\u043d", None))
+    # retranslateUi
+
