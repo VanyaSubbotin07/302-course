@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'f1.ui'
-## ... (остальное без изменений) ...
-################################################################################
-
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
                             QMetaObject, QObject, QPoint, QRect,
                             QSize, QTime, QUrl, Qt)
@@ -13,8 +6,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
                            QImage, QKeySequence, QLinearGradient, QPainter,
                            QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHeaderView, QLineEdit, QPushButton,
-                               QSizePolicy, QTableView, QWidget, QLabel)  # QLabel уже импортирован
-
+                               QSizePolicy, QTableView, QWidget, QLabel)
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -25,10 +17,9 @@ class Ui_Form(object):
         self.tableView.setObjectName(u"tableView")
         self.tableView.setGeometry(QRect(30, 20, 931, 411))
 
-        # === ДОБАВЛЕННЫЙ QLabel для фото ===
         self.photo_label = QLabel(Form)
         self.photo_label.setObjectName(u"photo_label")
-        self.photo_label.setGeometry(QRect(970, 20, 250, 250))  # x=970 — справа от tableView (30+931=961)
+        self.photo_label.setGeometry(QRect(970, 20, 250, 250))
         self.photo_label.setStyleSheet("border: 1px solid #ccc; background: white;")
         self.pixmap = QPixmap("1.png")
         if self.pixmap.isNull():
@@ -37,7 +28,6 @@ class Ui_Form(object):
             scaled = self.pixmap.scaled(240, 240, Qt.KeepAspectRatio, Qt.SmoothTransformation)
             self.photo_label.setPixmap(scaled)
         self.photo_label.setAlignment(Qt.AlignCenter)
-        # ===================================
 
         self.lineEdit = QLineEdit(Form)
         self.lineEdit.setObjectName(u"lineEdit")

@@ -14,6 +14,7 @@ from PySide6.QtWidgets import (
     QWidget, QLabel, QTableView, QVBoxLayout, QHBoxLayout, QHeaderView, QInputDialog,
     QMessageBox, QPushButton
 )
+
 from PySide6.QtGui import QFont
 from PySide6.QtGui import QStandardItemModel, QStandardItem
 from PySide6.QtWidgets import QMessageBox
@@ -21,6 +22,7 @@ from PySide6.QtWidgets import QApplication, QWidget, QMessageBox, QLineEdit
 from PySide6.QtWidgets import (
     QWidget, QLabel, QLineEdit, QComboBox, QPushButton, QVBoxLayout
 )
+
 from PySide6.QtGui import QFont, QPixmap, QIcon
 from PySide6.QtCore import Qt
 from f1 import Ui_Form
@@ -1218,7 +1220,7 @@ class LoginForm(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Автоцентр — Авторизация")
-        self.setWindowIcon(QIcon(str("Icon.png")))
+        self.setWindowIcon(QIcon("Icon.png"))
         self.setFixedSize(380, 700)
         self.setStyleSheet(AUTO_SALON_STYLE)
         self.init_ui()
@@ -1226,6 +1228,7 @@ class LoginForm(QWidget):
     def init_ui(self):
         font = QFont()
         font.setPointSize(14)
+
         self.logo_label = QLabel()
         pixmap = QPixmap("Logo.png")
         scaled_pixmap = pixmap.scaled(
@@ -1250,6 +1253,17 @@ class LoginForm(QWidget):
         self.password_input.setFixedHeight(50)
         self.password_input.setPlaceholderText("••••••••")
         self.password_input.setEchoMode(QLineEdit.Password)
+
+        # Кнопка "Показать/Скрыть пароль"
+        self.toggle_password_button = QPushButton("Показать")
+        self.toggle_password_button.setFixedWidth(100)
+        self.toggle_password_button.setCheckable(True)
+        self.toggle_password_button.clicked.connect(self.toggle_password_visibility)
+
+        # Горизонтальный layout для поля пароля и кнопки
+        password_layout = QHBoxLayout()
+        password_layout.addWidget(self.password_input)
+        password_layout.addWidget(self.toggle_password_button)
 
         self.combo_box_label = QLabel("Роль:")
         self.combo_box_label.setFont(font)
@@ -1278,11 +1292,13 @@ class LoginForm(QWidget):
         self.button_exit.setFixedHeight(50)
         self.button_exit.setObjectName("button_exit")
 
+        # Подключение сигналов
         self.button_exit.clicked.connect(self.close)
         self.button_login.clicked.connect(self.autorisation_app)
         self.button_check_avtomobile.clicked.connect(self.show_f1)
         self.button_registration.clicked.connect(self.show_f2)
 
+        # Основной layout
         layout = QVBoxLayout()
         layout.setSpacing(12)
         layout.setContentsMargins(30, 30, 30, 30)
@@ -1290,7 +1306,7 @@ class LoginForm(QWidget):
         layout.addWidget(self.login_label)
         layout.addWidget(self.login_input)
         layout.addWidget(self.password_label)
-        layout.addWidget(self.password_input)
+        layout.addLayout(password_layout)  # ← здесь добавляем горизонтальный layout
         layout.addWidget(self.combo_box_label)
         layout.addWidget(self.combo_box)
         layout.addWidget(self.button_login)
@@ -1298,6 +1314,15 @@ class LoginForm(QWidget):
         layout.addWidget(self.button_check_avtomobile)
         layout.addWidget(self.button_exit)
         self.setLayout(layout)
+
+    def toggle_password_visibility(self):
+        """Переключает режим отображения пароля."""
+        if self.toggle_password_button.isChecked():
+            self.password_input.setEchoMode(QLineEdit.Normal)
+            self.toggle_password_button.setText("Скрыть")
+        else:
+            self.password_input.setEchoMode(QLineEdit.Password)
+            self.toggle_password_button.setText("Показать")
 
     def show_f2(self):
         self.reg_window = RegForm()
@@ -1346,7 +1371,7 @@ class LoginForm(QWidget):
                 else:
                     QMessageBox.warning(self, "Ошибка", "Неверный логин или пароль для сотрудника!")
 
-            else:
+            else:  # Клиент
                 cursor.execute(
                     "SELECT ID, Familia, Imya, Otchestvo FROM Client WHERE Nomer_telephona = %s AND pass = %s",
                     (login, password)
@@ -1367,7 +1392,6 @@ class LoginForm(QWidget):
         finally:
             if connection:
                 connection.close()
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
